@@ -4,11 +4,11 @@ var bcrypt = require('bcrypt-nodejs');
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(process.env.DB_USER, { useNewUrlParser: true } );
+mongoose.connect(process.env.DB, { useNewUrlParser: true } );
 mongoose.connection.once('open', function(){
     console.log('Connected');
 }).on('error', function(error){
-    console.log('Error: ', error);
+    console.log('Error is: ', error);
 });
 
 mongoose.set('useCreateIndex', true);
